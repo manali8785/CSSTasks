@@ -1,0 +1,58 @@
+body{
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock{
+  height:300px;
+  width:300px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  position: relative;
+  border: 3px solid red;
+}
+.seconds_hand{
+  height: 50%;
+  width: 5px;
+  background-color: red;
+  border-radius: 5px;
+  position: absolute;
+  margin: 0 50%;
+  transform-origin: 50% 150px;
+}
+
+.minutes_hand{
+  height: 50%;
+  width: 10px;
+  background-color: #a3a3a3;
+  border-radius: 5px;
+  position: absolute;
+  margin: 0 49%;
+  transform-origin: 50% 150px;
+  opacity:0.5;
+}
+
+.hours_hand{
+  height: 50%;
+  width: 15px;
+  background-color: #a3a3a3;
+  border-radius: 5px;
+  position: absolute;
+  margin: 0 48%;
+  transform-origin: 50% 150px;
+  opacity:0.8;
+}
+
+@for $i from 0 through 11 {
+  .time#{$i+1} {
+    transform: rotate(#{$i * 30}deg);
+    height: 10%;
+    width: 10px;
+    margin: 0 auto;
+    position: absolute;
+    left: calc(50% - 5px);
+    transform-origin: 50% 150px;
+    background-color: #a3a3a3;
+  }
+}

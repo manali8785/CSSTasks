@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Garden and Bee</title>
+    <style>
+
+        body{
+
+        }
+        div{
+            position: relative;
+        }
+        #bee {
+              position: absolute;
+              animation: fly 10s linear infinite;
+        }
+        @keyframes fly {
+            0% {transform: translate(10px,10px)}
+            25%{transform: translate(200px,100px)}
+            50%{transform: translate(300px,180px)}
+            75%{transform: translate(350px,200px)}
+            100%{transform: translate(400px,50px)}
+        }
+        #garden{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div><img id="garden" src="garden.jpg"><img id="bee" src="bee.png"></div>
+</body>
+</html>

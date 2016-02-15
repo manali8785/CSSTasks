@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+<div class="clock">
+    <div class="time1"></div>
+    <div class="time2"></div>
+    <div class="time3"></div>
+    <div class="time4"></div>
+    <div class="time5"></div>
+    <div class="time6"></div>
+    <div class="time7"></div>
+    <div class="time8"></div>
+    <div class="time9"></div>
+    <div class="time10"></div>
+    <div class="time11"></div>
+    <div class="time12"></div>
+    <div class="seconds_hand"></div>
+    <div class="minutes_hand"></div>
+    <div class="hours_hand"></div>
+</div>
+</body>
+<script>
+
+document.addEventListener('DOMContentLoaded',function(){
+    var seconds_hand=document.querySelector('.seconds_hand');
+    var minutes_hand=document.querySelector('.minutes_hand');
+    var hours_hand=document.querySelector('.hours_hand');
+
+    setInterval(function () {
+        var secs=new Date().getSeconds();
+        var mins=new Date().getMinutes();
+        var hrs=new Date().getHours();
+        var degree_sec = secs*6;
+        var degree_min = mins*6;
+        var degree_hr=((30*mins)/60)+hrs*30;
+        seconds_hand.style.transform = "rotate("+degree_sec+"deg)";
+        minutes_hand.style.transform = "rotate("+degree_min+"deg)";
+        hours_hand.style.transform="rotate("+degree_hr+"deg)";
+    }, 1000);
+
+});
+</script>
+</html>
