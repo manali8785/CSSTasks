@@ -4,30 +4,32 @@
     <meta charset="UTF-8">
     <title>Garden and Bee</title>
     <style>
-
         body{
+        margin: 0;
+        }
+        .garden{
+            height: 600px;
+            background-image: url('bee.png'),url('garden.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size:100px,cover;
+        }
+        .garden:hover{
+            animation:move 5s linear infinite;
+        }
+        @keyframes move{
+            0% {background-position:10px 10px, center;}
 
-        }
-        div{
-            position: relative;
-        }
-        #bee {
-              position: absolute;
-              animation: fly 10s linear infinite;
-        }
-        @keyframes fly {
-            0% {transform: translate(10px,10px)}
-            25%{transform: translate(200px,100px)}
-            50%{transform: translate(300px,180px)}
-            75%{transform: translate(350px,200px)}
-            100%{transform: translate(400px,50px)}
-        }
-        #garden{
-            position: absolute;
+            25% {background-position:300px 200px, center;}
+
+            50% {background-position:600px 150px, center;}
+
+            100% {background-position:900px 500px, center;}
+
         }
     </style>
 </head>
 <body>
-    <div><img id="garden" src="garden.jpg"><img id="bee" src="bee.png"></div>
+<div class="garden"></div>
 </body>
 </html>
