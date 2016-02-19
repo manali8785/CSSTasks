@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Closures</h1>
+<h3>It is inner function that always has access to the vars and parameters of its outer function,
+even after the outer function has returned.</h3>
+
+<h1>Strict Mode</h1>
+<ul>
+    <li>Strict mode makes it easier to write "secure" JavaScript.</li>
+    <li>Strict mode changes previously accepted "bad syntax" into real errors.</li>
+    <li>As an example, in normal JavaScript, mistyping a variable name creates a new global variable. In strict mode, this will throw an error, making it impossible to accidentally create a global variable.</li>
+    <li>In normal JavaScript, a developer will not receive any error feedback assigning values to non-writable properties.</li>
+    <li>In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object, will throw an error.</li>
+</ul>
+    <div style="background-color:lightgrey">
+    Example:
+    <p>"use strict";</p>
+    <p>x = 90;</p>
+    <p>console.log(x); //Uncaught ReferenceError: x is not defined(anonymous function)</p>
+    </div>
+</body>
+<script>
+    var add=(function(){
+      console.log("add function called....");
+      var counter=0;
+      return function(){return counter+=1;}
+    })();
+
+      console.log(add());
+      console.log(add());
+      console.log(add());
+
+    function say667() {
+        console.log("say function called....");
+        var num = 666;
+        var say = function() { console.log(num); }
+        // num++;
+        return say;
+    }
+    var sayNumber = say667();
+    sayNumber(); // logs 667
+
+
+</script>
+</html>
